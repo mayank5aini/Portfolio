@@ -69,7 +69,7 @@
 .details h2 span {
   background: linear-gradient(to right, var(--green), var(--white));
   padding-bottom: 2px;
-  border-bottom: 5 px solid var(--green);
+  border-bottom: 5px solid var(--green);
   color: transparent;
   -webkit-background-clip: text;
 }
@@ -111,6 +111,47 @@
   text-align: justify;
 }
 
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bottom button {
+  width: 12rem;
+  padding: 0.8rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 5px;
+  background: var(--green);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.bottom button:hover {
+  box-shadow:
+    3px 3px 3px var(--green),
+    -3px 3px 3px var(--green),
+    3px -3px 3px var(--green),
+    -3px -3px 3px var(--green);
+}
+.social-icons {
+  display: flex;
+  font-size: 2.5rem;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--green);
+  scale: 105%;
+}
+
 @media screen and (width >= 768px) {
   .home {
     display: grid;
@@ -128,8 +169,20 @@
   .details h3 {
     font-size: 2.5rem;
   }
-}
 
+  .social-icons {
+    font-size: 3rem;
+  }
+
+  .bottom {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .bottom button {
+    border-radius: 20px;
+  }
+}
 @media screen and (width >= 1024px) {
   .home {
     margin: 3rem auto;
