@@ -60,9 +60,13 @@ navlinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
 
-    navlinks.forEach((item) => item.classList.remove("active"));
-
-    link.classList.add("active");
+    navlinks.forEach((item) => {
+      if (item === link) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
 
     const tabName = link.dataset.tab;
 
