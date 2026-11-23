@@ -1,4 +1,4 @@
-.home {
+.home.content.active {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -153,7 +153,7 @@
 }
 
 @media screen and (width >= 768px) {
-  .home {
+  .home.content.active {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -184,7 +184,7 @@
   }
 }
 @media screen and (width >= 1024px) {
-  .home {
+  .home.content.active {
     margin: 3rem auto;
   }
 

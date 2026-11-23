@@ -32,16 +32,26 @@
           <label for="menu-toggle" id="overlay">Close</label>
 
           <nav>
-            <a href="#" style="--i: 1">Home</a>
-            <a href="#" style="--i: 2">About</a>
-            <a href="#" style="--i: 3">Project</a>
-            <a href="#" style="--i: 4">Skills</a>
-            <a href="#" style="--i: 5">Contact</a>
+            <a href="#" style="--i: 1" data-tab="home" class="navlink active"
+              >Home</a
+            >
+            <a href="#" style="--i: 2" data-tab="about" class="navlink"
+              >About</a
+            >
+            <a href="#" style="--i: 3" data-tab="project" class="navlink"
+              >Project</a
+            >
+            <a href="#" style="--i: 4" data-tab="skills" class="navlink"
+              >Skills</a
+            >
+            <a href="#" style="--i: 5" data-tab="contact" class="navlink"
+              >Contact</a
+            >
           </nav>
         </div>
       </header>
       <main>
-        <section class="home">
+        <section class="content active">
           <div class="details">
             <h2><span>Mayank</span>Saini</h2>
             <h3>I'm<span id="typing-span"></span></h3>
@@ -74,6 +84,11 @@
             />
           </div>
         </section>
+
+        <section id="about" class="content">About</section>
+        <section id="project" class="content">Project</section>
+        <section id="skills" class="content">Skills</section>
+        <section id="contact" class="content">Contact</section>
       </main>
     </div>
     <script src="script.js"></script>

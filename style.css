@@ -123,6 +123,18 @@ nav a {
   transition: all 0.4s ease;
 }
 
+.navlink.active {
+  color: var(--green);
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
 @media screen and (width>= 1024px) {
   .main-container {
     max-width: 950px;
