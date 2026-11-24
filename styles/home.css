@@ -83,18 +83,22 @@
   overflow: hidden;
 }
 
+.details h3 {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
 .details h3 span {
   color: var(--green);
   display: inline-block;
-  min-width: 130px;
-  overflow: hidden;
+  min-width: 0;
+  width: auto;
+  overflow: visible;
   white-space: nowrap;
-}
-
-.details h3 span::after {
-  content: "|";
-  margin-left: 5px;
-  animation: blink 0.7s steps(1) infinite;
 }
 
 @keyframes blink {

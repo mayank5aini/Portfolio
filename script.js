@@ -6,11 +6,12 @@ if (toggle) {
 }
 
 const words = [
-  "Youtuber",
-  "Creator",
+  "Software developer",
+
   "Network Analyst",
+  "Software Engineer",
   "Freelancer",
-  "Developer",
+  "a Good Human 😁",
 ];
 
 const typingText = document.getElementById("typing-span");
