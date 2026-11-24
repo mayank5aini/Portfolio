@@ -51,9 +51,10 @@ const type = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (words?.length) type();
+  if (typingText && words.length > 0) {
+    type();
+  }
 });
-
 const navlinks = document.querySelectorAll(".navlink");
 const tabs = document.querySelectorAll(".content");
 
@@ -61,22 +62,22 @@ navlinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
 
-    navlinks.forEach((item) => {
-      if (item === link) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
-    });
+    const tabName = link.getAttribute("data-tab");
+    const targetTab = document.getElementById(tabName);
 
-    const tabName = link.dataset.tab;
+    if (!targetTab) {
+      console.error(`Section not found: ${tabName}`);
+      return;
+    }
 
-    tabs.forEach((tab) => {
-      if (tab.id === tabName) {
-        tab.classList.add("active");
-      } else {
-        tab.classList.remove("active");
-      }
-    });
+    navlinks.forEach((item) => item.classList.remove("active"));
+    tabs.forEach((tab) => tab.classList.remove("active"));
+
+    link.classList.add("active");
+    targetTab.classList.add("active");
+    if (toggle) {
+      toggle.checked = false;
+      document.body.classList.remove("no-scroll");
+    }
   });
 });
