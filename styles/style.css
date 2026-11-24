@@ -30,37 +30,45 @@ body.no-screen {
   overflow: hidden;
 }
 
+/* Main Container */
 .main-container {
   max-width: 700px;
   padding: 1rem;
   margin: 0 auto;
 }
 
+/* Header */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  gap: 1rem;
   margin: 1rem 0;
 }
 
+/* Brand */
 .brand-info img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .brand-info h2 {
   font-size: 1.7rem;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .brand-info {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
+/* Mobile Menu */
 #menu-toggle {
   display: none;
 }
@@ -89,6 +97,7 @@ header {
   pointer-events: none;
 }
 
+/* Navigation */
 nav {
   display: flex;
   flex-direction: column;
@@ -110,6 +119,7 @@ nav {
   transform: translateX(0%);
   transition-delay: calc(var(--i) * 0.2s);
 }
+
 nav a {
   text-align: center;
   padding: 0.8rem;
@@ -127,6 +137,7 @@ nav a {
   color: var(--green);
 }
 
+/* Content */
 .content {
   display: none;
 }
@@ -135,26 +146,30 @@ nav a {
   display: block;
 }
 
-@media screen and (width>= 1024px) {
+/* Tablet and Desktop */
+@media screen and (min-width: 1024px) {
   .main-container {
     max-width: 950px;
   }
 
   header {
     position: static;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    margin: 1.5rem 0 3.5rem;
+    padding: 0.5rem 0;
   }
 
   .brand-info {
-    gap: 20px;
+    gap: 15px;
   }
 
   .brand-info img {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 
   .brand-info h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #menu-toggle {
@@ -168,17 +183,22 @@ nav a {
   nav {
     display: flex;
     flex-direction: row;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    gap: clamp(0.8rem, 1.5vw, 1.5rem);
     position: static;
+    margin: 0;
     transform: translate(0%);
   }
 
   nav a {
-    padding: 0;
-    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    font-size: clamp(0.95rem, 1.2vw, 1.2rem);
     border: none;
     opacity: 1;
     transform: translate(0%);
+    white-space: nowrap;
   }
 
   nav a:hover {
@@ -186,29 +206,35 @@ nav a {
   }
 }
 
-@media screen and(width >=1250px) {
+/* Large Desktop */
+@media screen and (min-width: 1250px) {
   .main-container {
     max-width: 1200px;
   }
 
+  header {
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
   .brand-info {
-    gap: 35px;
+    gap: 20px;
   }
 
   .brand-info img {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
   }
 
   .brand-info h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   nav {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   nav a {
-    font-size: 2rem;
+    font-size: 1.35rem;
   }
 }

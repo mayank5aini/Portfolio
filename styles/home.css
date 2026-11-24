@@ -1,8 +1,8 @@
-.home.content.active {
+.content.active {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3rem;
   width: 90%;
   max-width: 700px;
   margin: 2rem auto;
@@ -73,6 +73,7 @@
   color: transparent;
   -webkit-background-clip: text;
 }
+
 .details h3 {
   font-size: 2rem;
   display: flex;
@@ -111,13 +112,14 @@
   text-align: justify;
 }
 
+/* BUTTON SECTION */
 .bottom {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
-.bottom button {
+.btn {
   width: 12rem;
   padding: 0.8rem 0;
   font-size: 1.2rem;
@@ -129,49 +131,78 @@
   transition: all 0.3s ease;
 }
 
-.bottom button:hover {
+.btn:hover {
   box-shadow:
     3px 3px 3px var(--green),
     -3px 3px 3px var(--green),
     3px -3px 3px var(--green),
     -3px -3px 3px var(--green);
+  background: transparent;
+  border: 2px solid var(--green);
+  color: var(--white);
 }
+
 .social-icons {
   display: flex;
-  font-size: 2.5rem;
+  align-items: center;
   gap: 20px;
 }
 
 .social-icons a {
+  text-decoration: none;
   color: var(--white);
-  transition: all 0.3s ease;
-  width: 50px;
-  height: 50px;
+  border: 2px solid var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   overflow: hidden;
-}
-
-.social-icons a i {
-  font-size: 2.5rem;
+  width: 45px;
+  height: 45px;
   transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: var(--green);
-  scale: 105%;
+.social-icons a i {
+  font-size: 1.5rem;
 }
 
-@media screen and (width >= 768px) {
-  .home.content.active {
+.social-icons a:hover {
+  background-color: var(--green);
+  color: var(--primary);
+  box-shadow:
+    2px 2px 2px var(--green),
+    -2px 2px 2px var(--green),
+    2px -2px 2px var(--green),
+    -2px -2px 2px var(--green);
+}
+
+@media screen and (min-width: 768px) {
+  main > section.content.active {
     display: grid;
-    grid-template-columns: auto auto;
+
+    grid-template-columns: minmax(0, 1fr) 270px;
+
+    align-items: center;
     justify-content: space-between;
+
     gap: 3.5rem;
     width: 100%;
     max-width: 100%;
+    margin: 2.5rem auto;
+  }
+
+  .details {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .img-container {
+    grid-column: 2;
+    grid-row: 1;
+    width: 270px;
+    height: 270px;
   }
 
   .details h2 {
@@ -188,15 +219,19 @@
 
   .bottom {
     flex-direction: row;
-    gap: 10px;
+    align-items: center;
+    gap: 20px;
   }
 
-  .bottom button {
-    border-radius: 20px;
+  .btn {
+    border-radius: 50px;
   }
 }
-@media screen and (width >= 1024px) {
-  .home.content.active {
+
+@media screen and (min-width: 1024px) {
+  main > section.content.active {
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 4rem;
     margin: 3rem auto;
   }
 
@@ -208,9 +243,11 @@
   .details {
     gap: 30px;
   }
+
   .details h2 {
     font-size: 5rem;
   }
+
   .details h3 {
     font-size: 2.8rem;
   }
