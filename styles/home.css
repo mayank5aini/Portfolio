@@ -80,15 +80,6 @@
   align-items: center;
   gap: 10px;
   white-space: nowrap;
-  overflow: hidden;
-}
-
-.details h3 {
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
   overflow: visible;
 }
 
@@ -116,7 +107,6 @@
   text-align: justify;
 }
 
-/* BUTTON SECTION */
 .bottom {
   display: flex;
   flex-direction: column;
@@ -183,12 +173,9 @@
 @media screen and (min-width: 768px) {
   main > section.content.active {
     display: grid;
-
     grid-template-columns: minmax(0, 1fr) 270px;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 3.5rem;
     width: 100%;
     max-width: 100%;

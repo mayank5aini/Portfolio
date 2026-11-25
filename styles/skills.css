@@ -1,0 +1,122 @@
+#skills {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.skills-header {
+  margin-bottom: 30px;
+}
+
+.skills-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.skills-header h1 span {
+  color: var(--green);
+}
+
+.skills-header p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--white);
+  opacity: 0.75;
+  max-width: 800px;
+}
+
+#skills .tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#skills .tech-card {
+  min-height: 145px;
+  padding: 20px 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  background: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 15px;
+
+  transition: all 0.3s ease;
+  cursor: default;
+
+  animation: skillFadeIn 0.5s ease both;
+}
+
+#skills .tech-card i {
+  font-size: 48px;
+  color: var(--green);
+  transition: transform 0.3s ease;
+}
+
+#skills .tech-card span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+}
+
+#skills .tech-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--green);
+  box-shadow: 0 5px 20px rgba(0, 255, 65, 0.12);
+}
+
+#skills .tech-card:hover i {
+  transform: scale(1.15);
+}
+
+@keyframes skillFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #skills .tech-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #skills {
+    padding: 20px 0;
+  }
+
+  .skills-header h1 {
+    font-size: 32px;
+  }
+
+  #skills .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #skills .tech-card {
+    min-height: 115px;
+    padding: 15px 10px;
+  }
+
+  #skills .tech-card i {
+    font-size: 38px;
+  }
+
+  #skills .tech-card span {
+    font-size: 14px;
+  }
+}

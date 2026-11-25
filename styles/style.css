@@ -16,8 +16,8 @@
   font-family: "Science Gothic", sans-serif;
 }
 
-body,
-html {
+html,
+body {
   background-color: var(--primary);
   color: var(--white);
   min-height: 100dvh;
@@ -45,6 +45,13 @@ header {
   margin: 1rem 0;
 }
 
+.brand-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .brand-info img {
   width: 70px;
   height: 70px;
@@ -56,13 +63,6 @@ header {
   font-size: 1.7rem;
   font-weight: 800;
   white-space: nowrap;
-}
-
-.brand-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
 }
 
 #menu-toggle {
@@ -165,16 +165,11 @@ nav a {
     font-size: 2rem;
   }
 
-  #menu-toggle {
-    pointer-events: none;
-  }
-
   .menu-icon {
     display: none;
   }
 
   nav {
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
@@ -199,7 +194,6 @@ nav a {
   }
 }
 
-/* Large Desktop */
 @media screen and (min-width: 1250px) {
   .main-container {
     max-width: 1200px;
